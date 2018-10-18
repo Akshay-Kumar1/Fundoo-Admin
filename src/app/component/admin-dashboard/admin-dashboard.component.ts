@@ -11,7 +11,7 @@ export class AdminDashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
+
     $(document).ready(function()
     {
       
@@ -30,6 +30,7 @@ export class AdminDashboardComponent implements OnInit {
               }
               (<any>$('#tableid')).DataTable({
                 data:array,
+                scrollY:200,
               });
             },
             error:function(error)
@@ -57,15 +58,20 @@ export class AdminDashboardComponent implements OnInit {
               {
                var arr=result.data.details;
                var html='';
-               for(let index=0;index<arr.length;index++)
-               {
-                 html+="<span class='card'>";
-                 html+="<span class='card-header'>"+arr[index].service+"</span>";
-                 html+="<span class='card-body'>"+arr[index].count+"</span>";
-                 html+="<span";
-                 $("#services").html(html);
-               }
 
+               html+="<span class='row'>"
+               html+="<span style='padding-left:150px'></span>"
+               for(let i=0;i<arr.length;i++)
+               {
+                 html+="<span style='padding-left:150px'></span>"
+                 html+="<span class ='card'>"
+                 html+="<span class='card-header' style='background-color:slategrey'>"+arr[i].service+"</span>"
+                 html+="<span class='card-body'>"+' Users : '+arr[i].count+"</span>"
+                 html+="</span>"
+                 
+                 $("#services").html(html); 
+               }
+               html+="</span>"
               },
               error:function(error)
               {
@@ -73,6 +79,14 @@ export class AdminDashboardComponent implements OnInit {
               }
           })
           return false;
+        })
+      })
+      $(document).ready(function()
+      {
+        $('#logoutButton').on('click',function()
+        {
+          window.location.href='/adminLogin'
+          localStorage.removeItem('token');
         })
       })
   }
