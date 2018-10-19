@@ -11,7 +11,8 @@ export class AdminDashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
+    
+    var token=localStorage.getItem('token'); 
     $(document).ready(function()
     {
       
@@ -28,10 +29,38 @@ export class AdminDashboardComponent implements OnInit {
               {
                   array.push([i+1,result.data.data[i].firstName,result.data.data[i].lastName,result.data.data[i].email,result.data.data[i].service])
               }
-              (<any>$('#tableid')).DataTable({
+              var table=(<any>$('#tableid')).DataTable({
                 data:array,
                 scrollY:200,
+                resposive:true,
               });
+
+              $('#tableid tbody').on('click', 'tr', function () {
+                var id = this.id;
+                console.log(id);
+                var myindex=table.row(this).index();
+                var index = $.inArray(id, array);
+                console.log(myindex);
+                if ( index === -1 ) {
+                    array.push( id );
+                } else {
+                   array.splice( index, 1 );
+                }
+                $(this).toggleClass('selected');
+               console.log(result.data.data[myindex].firstName)
+                $("#firstName").text(result.data.data[myindex].firstName);
+                $("#lastName").text(result.data.data[myindex].lastName);
+                $("#phoneNumber").text(result.data.data[myindex].phoneNumber);
+                $("#role").text(result.data.data[myindex].role);
+                $("#service").text(result.data.data[myindex].service);
+                $("#createdDate").text(result.data.data[myindex].createdDate);
+                $("#modifiedData").text(result.data.data[myindex].modifiedData);
+                $("#userName").text(result.data.data[myindex].userName);
+                $("#email").text(result.data.data[myindex].email);
+
+                $("#myDataPopup").click();
+            });
+
             },
             error:function(error)
             {
@@ -41,9 +70,9 @@ export class AdminDashboardComponent implements OnInit {
         return false;
       })
       })
+     
       $(document).ready(function()
       {
-        var token=localStorage.getItem('token');
   
       $(function(){
          $.ajax({
@@ -81,14 +110,29 @@ export class AdminDashboardComponent implements OnInit {
           return false;
         })
       })
-      $(document).ready(function()
-      {
-        $('#logoutButton').on('click',function()
-        {
-          window.location.href='/adminLogin'
-          localStorage.removeItem('token');
+      $(document).ready(function(){
+        $('#logoutButton').on('click',function(){
+          $.ajax({
+           
+               type: 'POST',
+               url:'http://34.213.106.173/api/user/logout',
+               headers:
+               {
+                 'Authorization':token
+               },
+               success:function()
+               {
+                  console.log('Success');
+                  window.location.href='/adminLogin'
+                  localStorage.removeItem('token'); 
+               },
+               error:function(error)
+               {
+                 console.log(error)
+               }
+           })
+         })
         })
-      })
   }
 
 }
