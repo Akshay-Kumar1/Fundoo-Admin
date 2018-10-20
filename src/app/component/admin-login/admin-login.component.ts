@@ -33,12 +33,12 @@ const admin= {
         {
           localStorage.setItem('token',result.id);
           console.log(result)
-          window.location.href='/adminDashboard'
+          $(location).attr('href','/adminDashboard')
         },
         error:function(error)
         {
-          console.log(`Error ${error}`)
-          $(`p#error`).html('Email/Password Incorrect')
+          console.log(error)
+          $('#error').html('Email/Password Incorrect')
         }
     })
     return false;

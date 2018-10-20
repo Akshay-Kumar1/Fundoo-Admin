@@ -37,26 +37,25 @@ export class AdminDashboardComponent implements OnInit {
 
               $('#tableid tbody').on('click', 'tr', function () {
                 var id = this.id;
-                console.log(id);
-                var myindex=table.row(this).index();
+                // console.log(id);
+                var i=table.row(this).index();
                 var index = $.inArray(id, array);
-                console.log(myindex);
+                // console.log(i);
                 if ( index === -1 ) {
                     array.push( id );
                 } else {
                    array.splice( index, 1 );
                 }
-                $(this).toggleClass('selected');
-               console.log(result.data.data[myindex].firstName)
-                $("#firstName").text(result.data.data[myindex].firstName);
-                $("#lastName").text(result.data.data[myindex].lastName);
-                $("#phoneNumber").text(result.data.data[myindex].phoneNumber);
-                $("#role").text(result.data.data[myindex].role);
-                $("#service").text(result.data.data[myindex].service);
-                $("#createdDate").text(result.data.data[myindex].createdDate);
-                $("#modifiedData").text(result.data.data[myindex].modifiedData);
-                $("#userName").text(result.data.data[myindex].userName);
-                $("#email").text(result.data.data[myindex].email);
+               console.log(result.data.data[i].firstName)
+                $("#firstName").text(result.data.data[i].firstName);
+                $("#lastName").text(result.data.data[i].lastName);
+                $("#phoneNumber").text(result.data.data[i].phoneNumber);
+                $("#role").text(result.data.data[i].role);
+                $("#service").text(result.data.data[i].service);
+                $("#createdDate").text(result.data.data[i].createdDate);
+                $("#modifiedData").text(result.data.data[i].modifiedData);
+                $("#userName").text(result.data.data[i].userName);
+                $("#email").text(result.data.data[i].email);
 
                 $("#myDataPopup").click();
             });
@@ -123,7 +122,7 @@ export class AdminDashboardComponent implements OnInit {
                success:function()
                {
                   console.log('Success');
-                  window.location.href='/adminLogin'
+                  $(location).attr('href','/adminLogin')
                   localStorage.removeItem('token'); 
                },
                error:function(error)
