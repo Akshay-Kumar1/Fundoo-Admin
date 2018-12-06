@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import 'datatables.net';
+
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
@@ -16,14 +17,12 @@ export class AdminDashboardComponent implements OnInit {
     $(document).ready(function()
     {
       
-    
     $(function(){
        $.ajax({
             type: 'GET',
             url:'http://34.213.106.173/api/user/getAdminUserList',
             success:function(result)
             {
-              // console.log(result)
               var array=[];
               for(var i=0;i<result.data.data.length;i++)
               {
@@ -37,10 +36,8 @@ export class AdminDashboardComponent implements OnInit {
 
               $('#tableid tbody').on('click', 'tr', function () {
                 var id = this.id;
-                // console.log(id);
                 var i=table.row(this).index();
                 var index = $.inArray(id, array);
-                // console.log(i);
                 if ( index === -1 ) {
                     array.push( id );
                 } else {
@@ -72,7 +69,6 @@ export class AdminDashboardComponent implements OnInit {
      
       $(document).ready(function()
       {
-  
       $(function(){
          $.ajax({
           
@@ -88,10 +84,10 @@ export class AdminDashboardComponent implements OnInit {
                var html='';
 
                html+="<span class='row'>"
-               html+="<span style='padding-left:150px'></span>"
+               html+="<span style='margin-left:150px'></span>"
                for(let i=0;i<arr.length;i++)
                {
-                 html+="<span style='padding-left:150px'></span>"
+                 html+="<span style='margin-left:150px'></span>"
                  html+="<span class ='card'>"
                  html+="<span class='card-header' style='background-color:slategrey'>"+arr[i].service+"</span>"
                  html+="<span class='card-body'>"+' Users : '+arr[i].count+"</span>"
@@ -132,6 +128,8 @@ export class AdminDashboardComponent implements OnInit {
            })
          })
         })
+        $('#goToQuestions').on('click',function(){
+        $(location).attr('href','/questions')
+     })
   }
-
 }

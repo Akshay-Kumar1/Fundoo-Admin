@@ -1,10 +1,9 @@
-
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<div style="padding-top:1%">
+<div style="margin-top:1%">
 </div>
 <div class="container">
   <div class="card">
-    <div class="card-body text-white toolColor" >
+    <div class="card-body text-white toolColor">
       <div style="text-align: center">
         <span class="color1" style="font-size: 25px">F</span>
         <span class="color2" style="font-size: 25px">U</span>
@@ -14,18 +13,23 @@
         <span class="color1" style="font-size: 25px">O</span>
         <span style="color:black;float:left;">Admin Page</span>
         <span style="float:right">
-          <button type="button" class="btn btn-dark" style="float:right" id="logoutButton">Logout</button>
+          <button type="button" class="btn btn-dark" style="float:right" id="logoutButton">
+            Logout</button>
         </span>
       </div>
     </div>
   </div>
-  <div style="padding-top:2%">
+  <div style="margin-top:2%">
   </div>
   <span style="text-transform:uppercase" id="services"></span>
   <div style="padding-top:4%">
   </div>
-  <div class="card" style="background-color:lightslategray">
-    <table id="tableid" class="table-bordered table-hover table-striped" style="width:100%;cursor:pointer;background-color:cornsilk">
+  <button style="text-align:center;cursor: pointer;" button type="button" class="btn btn-dark" 
+  id="goToQuestions" >Goto Approve / Reject Section </button>
+  <div style="padding-top:1%"></div>
+  <div class="card " style="background-color:lightslategray">
+    <table id="tableid" class="table-bordered table-hover table-striped" 
+    style="width:100%;cursor:pointer;background-color:cornsilk">
       <thead style="background-color:lightslategray">
         <tr>
           <th scope="col">S.No</th>
@@ -39,32 +43,34 @@
   </div>
 </div>
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id="myDataPopup" style="display:none">
-    Info
-  </button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" 
+id="myDataPopup" style="display:none">
+  Info
+</button>
 
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Information</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-         FirstName : <label id="firstName"></label><br>
-         LastName  : <label id="lastName"></label><br>
-         Phonenumber : <label id="phoneNumber"></label><br>
-         Role :<label id="role"></label><br>
-         Service :<label id="service"></label><br>
-         Created Date :<label id="createdDate"></label><br>
-         Modified Date :<label id="modifiedData"></label><br>
-         Email :<label id="email"></label><br>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" 
+aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Information</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        FirstName : <label id="firstName"></label><br>
+        LastName : <label id="lastName"></label><br>
+        Phonenumber : <label id="phoneNumber"></label><br>
+        Role :<label id="role"></label><br>
+        Service :<label id="service"></label><br>
+        Created Date :<label id="createdDate"></label><br>
+        Modified Date :<label id="modifiedData"></label><br>
+        Email :<label id="email"></label><br>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
+</div>

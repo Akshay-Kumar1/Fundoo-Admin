@@ -7,11 +7,9 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
   setUrl = 'http://34.213.106.173/api'
-  adminLogin(url,body)
-  
-{
-  url = this.setUrl+url;
-  return this.http.post(url,body);
-}
+  adminLogin(url, body) {
+    url = this.setUrl + url;
+    return this.http.post(url, body);
+  }
 
 }

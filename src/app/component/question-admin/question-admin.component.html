@@ -1,0 +1,49 @@
+<div *ngIf="loader==0">
+  <div class="sk-fading-circle" >
+    <div class="sk-circle1 sk-circle"></div>
+    <div class="sk-circle2 sk-circle"></div>
+    <div class="sk-circle3 sk-circle"></div>
+    <div class="sk-circle4 sk-circle"></div>
+    <div class="sk-circle5 sk-circle"></div>
+    <div class="sk-circle6 sk-circle"></div>
+    <div class="sk-circle7 sk-circle"></div>
+    <div class="sk-circle8 sk-circle"></div>
+    <div class="sk-circle9 sk-circle"></div>
+    <div class="sk-circle10 sk-circle"></div>
+    <div class="sk-circle11 sk-circle"></div>
+    <div class="sk-circle12 sk-circle"></div>
+  </div>
+</div>
+
+<div class="container" >
+  <div class="card toolColor" >
+      <div class="align" fxLayout="row" >
+        <span class="color1">F</span>
+        <span class="color2">U</span>
+        <span class="color5">N</span>
+        <span class="color3">D</span>
+        <span class="color4">O</span>
+        <span class="color1">O</span>
+        <span class="logout">
+        <div id="dashboard" class="btn btn-dark">Goto Dashboard</div>
+        </span>
+      </div>
+      <div style="padding-top:20px"></div>
+      <div class="display" style="font-style:2vw">
+        <h1 class="display-5">Approve / Reject Section </h1>
+      </div>
+    </div>
+<div *ngIf="loader==1">
+<div class="card toolColor table-responsive" >
+<table id="userList" class="table-hover table-bordered table-striped" style="width:100%; color: black">
+  <thead style="background-color:slategray">
+    <tr>
+      <th scope="col">S.No</th>
+      <th scope="col">Questions Asked</th>
+      <th scope="col">Approve / Reject</th>
+    </tr>
+  </thead>
+</table>
+</div>
+</div>
+</div>
