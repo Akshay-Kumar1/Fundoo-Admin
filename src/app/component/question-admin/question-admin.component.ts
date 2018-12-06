@@ -36,7 +36,7 @@ export class QuestionAdminComponent implements OnInit {
           var questionArray1 = (<any>$('#userList')).DataTable({
             data: questionArray,
             scroller: true,
-            scrollY: 360,
+            scrollY: 330,
             scrollX: false,
             responsive: true,
             "columnDefs": [{

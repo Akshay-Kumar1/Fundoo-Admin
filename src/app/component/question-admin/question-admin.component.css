@@ -205,3 +205,8 @@ table td
   {
     word-break:break-all
   }
+  table
+  {
+      table-layout: fixed;
+  }
+  
