@@ -18,8 +18,9 @@ export class QuestionAdminComponent implements OnInit {
         type: 'GET',
         url: 'http://34.213.106.173/api/questionAndAnswerNotes/getUnApprovedAnswer',
         dataType: "json",
-        headers: {
-          'Authorization': token,
+        headers: 
+        {
+            'Authorization': token,
         },
         error: function (error) { 
           return false;
@@ -60,10 +61,12 @@ export class QuestionAdminComponent implements OnInit {
             $.ajax({
               type: 'POST',
               url: 'http://34.213.106.173/api/questionAndAnswerNotes/approve/' + parent,
-              dataType: "json",
-              isApproved: true,
+              dataType: 'json',
               headers: {
-                'Authorization': token,
+                'Authorization': token
+              },
+              data: {
+                'isApproved': true
               },
               error: function (error) {
                 console.log(error);
@@ -109,8 +112,9 @@ export class QuestionAdminComponent implements OnInit {
       });
     });
     this.loader=1;
-    $('#dashboard').on('click',function(){
+    $('#dashboard').on('click',function()
+    {
       $(location).attr('href','/adminDashboard')
-   })
+    })
   }
 }

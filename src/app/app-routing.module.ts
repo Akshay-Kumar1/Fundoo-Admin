@@ -5,6 +5,7 @@ import { AdminLoginComponent } from './component/admin-login/admin-login.compone
 import { AdminDashboardComponent } from './component/admin-dashboard/admin-dashboard.component';
 import { AuthGuardGuard } from './auth-guard.guard';
 import { QuestionAdminComponent } from './component/question-admin/question-admin.component';
+import { PaymentComponent } from './component/payment/payment.component';
 
 
 
@@ -13,7 +14,8 @@ const routes: Routes =
   { path: '', component: AdminDashboardComponent, pathMatch: 'full', canActivate:[AuthGuardGuard] },
   { path: 'adminLogin',component: AdminLoginComponent },
   { path: 'adminDashboard',component: AdminDashboardComponent,canActivate:[AuthGuardGuard]},
-  { path: 'questions',component:QuestionAdminComponent}
+  { path: 'questions',component:QuestionAdminComponent},
+  { path: 'payment',component:PaymentComponent }
 ]
 
 @NgModule({

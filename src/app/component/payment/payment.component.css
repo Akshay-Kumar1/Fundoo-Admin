@@ -1,0 +1,62 @@
+.display
+{
+   text-align: center;
+   color: black;
+}
+.card
+{
+    margin-top: 2%;
+    background-color: #ffffff;
+}
+.align
+{
+    text-align: center;
+}
+
+.row
+{
+    padding-top: 3%;
+    padding-bottom: 5%;
+}
+.container
+{
+    background-color: white;
+}
+.logout
+{
+    color: white;
+    float: right;
+}
+.color2
+{
+  color : blue;
+font-size: 30px;
+}
+.lo{
+    word-break: break-all
+}
+.color1
+{
+color : red;
+font-size : 30px;
+}
+.color4
+{
+color : green;
+font-size: 30px;
+}
+.color3
+{
+  color : blue;
+  font-size: 30px;
+}
+.color5
+{
+    font-size: 30px;
+    color : yellow;
+}
+.color6
+{
+    font-size: 30px;
+    color : red;
+}

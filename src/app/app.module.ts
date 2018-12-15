@@ -5,6 +5,7 @@ import { AdminLoginComponent } from './component/admin-login/admin-login.compone
 import { AdminDashboardComponent } from './component/admin-dashboard/admin-dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import { QuestionAdminComponent } from './component/question-admin/question-admin.component';
+import { PaymentComponent } from './component/payment/payment.component';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { QuestionAdminComponent } from './component/question-admin/question-admi
     AdminLoginComponent,
     AdminDashboardComponent,
     QuestionAdminComponent,
+    PaymentComponent,
   ],
   imports: [
     BrowserModule,
